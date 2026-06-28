@@ -85,7 +85,10 @@ x1 = String(x1)  // Number -> String
 let x2 = "pizza"
 x2 = Number(x2)  // String -> Number (NaN)
 
-// String mothods - các phương thức hay dùng với string
+console.log('Type of x1:', typeof x1)
+console.log('Type of x2:', typeof x2)
+
+// String methods - các phương thức hay dùng với string
 let str = 'Duc Trung';
     // length - độ dài chuỗi
 console.log('length:', str.length);
@@ -97,7 +100,8 @@ console.log('toLowerCase:', str.toLowerCase());
 console.log('charAt(7):', str.charAt(7));
 console.log('charAt(7):', str[7]); 
     // indexOf(substring) - tìm vị trí của chuỗi con 
-console.log('indexOf("Nam"):', str.indexOf('Nam')); // 6
+console.log('indexOf("Nam"):', str.indexOf('Nam')); // -1 (không tìm thấy)
+console.log('indexOf("Trung"):', str.indexOf('Trung')); // 4
 
 
 // Toán tử số học - các phép toán
@@ -107,6 +111,7 @@ console.log('indexOf("Nam"):', str.indexOf('Nam')); // 6
 console.log(' 7 / 3 =', 7 / 3);
 console.log(' 7 % 3 =', 7 % 3);
 console.log(' 2 ** 3 =', 2 ** 3);
+console.log('2 ** 2 ** 3 =', 2 ** 2 ** 3);
 
 // Toán tử gán
 let a1 = 20;
@@ -140,7 +145,7 @@ if (age >= 18) {
 }
 
     // Dạng đa nhánh
-score = 7;
+score = -7;
 if (8 <= score && score <= 10){
     console.log('Học lực: Giỏi');
 } else if (6.5 <= score && score < 8){
