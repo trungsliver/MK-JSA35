@@ -140,7 +140,7 @@ if (age >= 18) {
 }
 
     // Dạng đa nhánh
-let score = 7;
+score = 7;
 if (8 <= score && score <= 10){
     console.log('Học lực: Giỏi');
 } else if (6.5 <= score && score < 8){
