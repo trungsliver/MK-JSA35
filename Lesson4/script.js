@@ -45,3 +45,22 @@ newDiv.setAttribute('class', 'container');
 document.body.appendChild(newDiv);
         // Chỉnh sửa text của thẻ div vừa tạo
 newDiv.textContent = 'Thẻ div mới nè';
+
+// ==================== THỰC HÀNH ====================
+    // btn1: thay đổi text h1
+function changeText() {
+    // Dùng DOM lấy thẻ h1
+    const h1 = document.getElementById('myH1');
+    // Thay đổi text của thẻ h1
+    h1.textContent = 'Minh Trí chưa làm BTVN';
+}
+
+    // btn2: hiện alert khi click
+function showAlert() {
+    alert('Bạn vừa click vào button 2');
+}
+
+    // btn3: đổi màu nèn của body
+document.getElementById('btn3').onclick = function() {
+    document.body.style.backgroundColor = 'salmon';
+}
