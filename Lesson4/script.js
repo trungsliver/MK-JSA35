@@ -64,3 +64,56 @@ function showAlert() {
 document.getElementById('btn3').onclick = function() {
     document.body.style.backgroundColor = 'salmon';
 }
+
+// Bài tập FORM: validate email, password
+document.getElementById('myForm').onsubmit = function(event) {
+    // Ngăn chặn hành vi mặc định của form (submit)
+    event.preventDefault(); 
+
+    // Dùng DOM lấy nội dung input của email và password
+        // trim(): loại bỏ khoảng trắng đầu và cuối chuỗi
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    // Kiểm tra đã nhập email và password chưa
+    if (username == '' ||email === '' || password === '') {
+        alert('Vui lòng nhập đầy đủ email và password');
+        return; // Dừng hàm
+    }
+
+    // Username ít nhất 3 ký tự
+    if (username.length < 3) {
+        alert('Username phải có ít nhất 3 ký tự');
+        return; // Dừng hàm
+    }
+
+    // Email phải đúng định dạng (dùng regular expression - regex)
+    if (!validateEmail(email)) {
+        alert('Email không hợp lệ');
+        return; // Dừng hàm
+    }
+
+    // Password: min 6 ký tự, gồm viết hoa, viết thường, số, ký tự đặc biệt
+    if (!validatePassword(password)) {
+        alert('Password không hợp lệ. Yêu cầu: ít nhất 6 ký tự, gồm viết hoa, viết thường, số và ký tự đặc biệt');
+        return; // Dừng hàm
+    }
+}
+
+function validateEmail(email) {
+    const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    return regex.test(email);
+}
+
+function validatePassword(password) {
+    //     ^
+    // (?=.*[a-z])        // Có ít nhất 1 chữ thường
+    // (?=.*[A-Z])        // Có ít nhất 1 chữ hoa
+    // (?=.*\d)           // Có ít nhất 1 chữ số
+    // (?=.*[^A-Za-z0-9]) // Có ít nhất 1 ký tự đặc biệt
+    // .{6,}              // Độ dài tối thiểu 6 ký tự
+    // $
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,}$/;
+    return regex.test(password);
+}
