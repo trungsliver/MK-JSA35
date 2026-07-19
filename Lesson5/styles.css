@@ -83,6 +83,14 @@ h2 {
 	gap: 20px;
 }
 
+#productList {
+	width: min(1100px, 100%);
+	margin: 0 auto 10px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 20px;
+}
+
 .student {
 	position: relative;
 	padding: 22px 20px 18px;
@@ -188,6 +196,125 @@ h2 {
 	animation-delay: 0.4s;
 }
 
+.product-card {
+	position: relative;
+	padding: 16px 16px 18px;
+	border-radius: 22px;
+	background:
+		linear-gradient(180deg, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.7));
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	box-shadow: var(--shadow);
+	backdrop-filter: blur(16px);
+	overflow: hidden;
+	transform: translateY(18px);
+	opacity: 0;
+	animation: cardIn 0.65s ease forwards;
+	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.product-card::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(56, 189, 248, 0.12), transparent 35%);
+	pointer-events: none;
+}
+
+.product-card::after {
+	content: "";
+	position: absolute;
+	inset: auto -24px -24px auto;
+	width: 96px;
+	height: 96px;
+	border-radius: 50%;
+	background: radial-gradient(circle, rgba(34, 197, 94, 0.18), transparent 70%);
+	pointer-events: none;
+}
+
+.product-card:hover {
+	transform: translateY(-8px) scale(1.01);
+	border-color: rgba(34, 197, 94, 0.38);
+	box-shadow: 0 22px 55px rgba(2, 6, 23, 0.5);
+}
+
+.product-card img {
+	display: block;
+	width: 100%;
+	height: 210px;
+	object-fit: cover;
+	border-radius: 16px;
+	margin-bottom: 16px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.product-card:hover img {
+	transform: scale(1.04);
+	filter: saturate(1.08);
+}
+
+.product-card h3,
+.product-card p {
+	position: relative;
+	z-index: 1;
+	margin: 0;
+}
+
+.product-card h3 {
+	font-size: 1.15rem;
+	color: #ffffff;
+	margin-bottom: 10px;
+	line-height: 1.35;
+}
+
+.product-card p {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 7px 12px;
+	border-radius: 999px;
+	font-size: 0.95rem;
+	color: #dff6ff;
+	background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(34, 197, 94, 0.18));
+	border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.product-card p::before {
+	content: "Price";
+	font-size: 0.72rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: rgba(229, 238, 252, 0.72);
+}
+
+.product-card:nth-child(2n) p {
+	background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(56, 189, 248, 0.18));
+}
+
+.product-card:nth-child(1) {
+	animation-delay: 0.05s;
+}
+
+.product-card:nth-child(2) {
+	animation-delay: 0.12s;
+}
+
+.product-card:nth-child(3) {
+	animation-delay: 0.19s;
+}
+
+.product-card:nth-child(4) {
+	animation-delay: 0.26s;
+}
+
+.product-card:nth-child(5) {
+	animation-delay: 0.33s;
+}
+
+.product-card:nth-child(6) {
+	animation-delay: 0.4s;
+}
+
 @keyframes cardIn {
 	from {
 		opacity: 0;
@@ -240,9 +367,17 @@ h2 {
 		gap: 14px;
 	}
 
+	#productList {
+		gap: 14px;
+	}
+
 	.student {
 		padding: 18px 16px 16px;
 		border-radius: 18px;
+	}
+
+	.product-card img {
+		height: 190px;
 	}
 }
 
