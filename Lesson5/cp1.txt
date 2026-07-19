@@ -1,0 +1,21 @@
+Quy tắc đặt tên folder cho CP1: [TenLop]_[HoTen]_CP1
+Ví dụ: JSA35_BuiDucTrung_CP1
+
+Các file có trong folder:
+- index.html 
+- styles.css
+- script.js
+- tracnghiem.txt (ghi các đáp án trắc nghiệm vào file này)
+
+Link đề bài: shorturl.at/1kumc
+
+Hạn nộp: 11h00
+
+========== Trừ điểm ================
+Bảo Hoàng: 2
+Duy An:
+Đức Khiêm:
+Khôi Nguyên:
+Minh Trí: nghỉ học
+Hoàng Minh: 1
+Anh Minh: 
