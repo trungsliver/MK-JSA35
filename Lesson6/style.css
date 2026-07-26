@@ -15,6 +15,42 @@ h2 {
 	text-align: center;
 }
 
+button,
+input {
+	font: inherit;
+}
+
+button {
+	padding: 10px 16px;
+	border: none;
+	border-radius: 10px;
+	background: #2563eb;
+	color: #ffffff;
+	cursor: pointer;
+	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+	background: #1d4ed8;
+	transform: translateY(-1px);
+	box-shadow: 0 8px 18px rgba(37, 99, 235, 0.18);
+}
+
+input[type="text"] {
+	width: min(100%, 420px);
+	padding: 10px 14px;
+	margin: 0 8px 12px 0;
+	border: 1px solid #cbd5e1;
+	border-radius: 10px;
+	outline: none;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus {
+	border-color: #2563eb;
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
 #todo-list, #post-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -49,8 +85,64 @@ h2 {
 	box-shadow: 0 10px 24px rgba(56, 89, 157, 0.16);
 }
 
+#note-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 12px;
+	max-width: 1100px;
+	margin: 16px auto 0;
+}
+
+#note-list p {
+	margin: 0;
+	padding: 14px 16px;
+	border-radius: 12px;
+	background: #ffffff;
+	border: 1px solid #dbe2ea;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#note-list p:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
 /* Bài 3: Darkmode */
-.darkmode {
-    background-color: #1f2937;
-    color: salmon;
+.darkmode,
+body.dark {
+	background-color: #111827;
+	color: #e5e7eb;
+}
+
+.darkmode .card,
+body.dark .card,
+.darkmode #note-list p,
+body.dark #note-list p {
+	background: #1f2937;
+	border-color: #374151;
+	color: #e5e7eb;
+}
+
+.darkmode button,
+body.dark button {
+	background: #f59e0b;
+	color: #111827;
+}
+
+.darkmode button:hover,
+body.dark button:hover {
+	background: #d97706;
+}
+
+.darkmode input[type="text"],
+body.dark input[type="text"] {
+	background: #111827;
+	color: #e5e7eb;
+	border-color: #4b5563;
+}
+
+.darkmode input[type="text"]::placeholder,
+body.dark input[type="text"]::placeholder {
+	color: #9ca3af;
 }

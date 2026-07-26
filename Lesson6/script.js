@@ -64,3 +64,31 @@ const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark') {
     document.body.classList.add('dark');
 }
+
+// Bài 4: Note list
+    // Lấy ghi chú trong localStorage hoặc khởi tạo danh sách rỗng
+let notes = JSON.parse(localStorage.getItem('notes')) || [];
+    // sự kiện thêm ghi chú
+const addNoteBtn = document.getElementById('addNote');
+addNoteBtn.onclick = () => {
+    let content = document.getElementById('noteInput').value;
+    if (content) {
+        // Thêm vào danh sách notes
+        notes.push(content);
+        // Lưu vào localStorage
+        localStorage.setItem('notes', JSON.stringify(notes));
+        // Hiển thị lại danh sách ghi chú
+        displayNotes();
+        // Xóa nội dung input sau khi thêm
+        document.getElementById('noteInput').value = '';
+    }
+}
+
+function displayNotes() {
+     const list = document.getElementById("note-list");
+    list.innerHTML = "";
+    notes.forEach((item, index) => {
+        list.innerHTML += `<p>${item}</p>`;
+    });
+}
+displayNotes();;
