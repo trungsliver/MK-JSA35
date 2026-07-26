@@ -43,3 +43,24 @@ fetch('https://jsonplaceholder.typicode.com/posts')
             container.appendChild(card);
         }
     });
+
+// Bài 3: Darkmode - Lightmode
+    // Dùng DOM lấy button chuyển theme
+const themeButton = document.getElementById('themeBtn');
+    // Xử lý sự kiện ấn nút
+themeButton.onclick = () => {
+    // Thêm hoặc xóa class 'darkmode vào body
+    document.body.classList.toggle('darkmode');
+    // Lưu trạng thái theme vào localStorage
+    if (document.body.classList.contains('darkmode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+    // Load theme khi reload trang
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
+}
