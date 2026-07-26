@@ -26,3 +26,20 @@ fetch('https://jsonplaceholder.typicode.com/todos')
             container.appendChild(card);
         }
     })
+
+// Bài 2: Post list
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(data => {
+        const container = document.getElementById('post-list');
+
+        for (let i=0; i <20; i++) {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.innerHTML = `
+                <h3>${data[i].title}</h3>
+                <p>${data[i].body}</p>
+            `;
+            container.appendChild(card);
+        }
+    });
