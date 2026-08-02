@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7</title>
+    <!-- Link css -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h2>Xác thực người dùng</h2>
+    <main class="page">
+        <!-- Thông tin người dùng -->
+        <section id="user-panel" class="user-panel card">
+            <div>
+                <h2 class="panel-label">Trạng thái đăng nhập</h2>
+                <h3 id="user-panel-title">Chưa đăng nhập</h3>
+                <div id="user-panel-details" class="panel-details">
+                    Sau khi đăng nhập, thông tin tài khoản sẽ hiển thị ở đây.
+                </div>
+            </div>
+            <button type="button" id="logout-button" class="logout-button">Đăng xuất</button>
+        </section>
+        
+        <!-- Form -->
+        <section class="auth-layout">
+            <!-- Register - Đăng ký -->
+            <form action="" id="register-form" class="card" novalidate>
+                <h2>Đăng ký</h2>
+
+                <label>
+                    Username
+                    <input type="text" id="register-username" name="username" placeholder="Username">
+                </label>
+                <label>
+                    Email
+                    <input type="email" id="register-email" name="email" placeholder="Email">
+                </label>
+                <label>
+                    Số điện thoại
+                    <input type="tel" id="register-phone" name="phone" placeholder="Phone number">
+                </label>
+                <label>
+                    Ngày sinh
+                    <input type="date" id="register-dob" name="dob">
+                </label>
+                <label>
+                    Password
+                    <input type="password" id="register-password" name="password" placeholder="Password">
+                </label>
+
+                <label>
+                    Confirm password
+                    <input type="password" id="register-confirm-password" name="confirmPassword"
+                        placeholder="Confirm password">
+                </label>
+
+                <label class="checkbox-row">
+                    <input type="checkbox" id="register-agree" name="agree">
+                    I agree to the terms and conditions.
+                </label>
+                <button type="submit">Đăng ký</button>
+
+                <p id="register-message" class="message" aria-live="polite">Vui lòng nhập thông tin</p>
+            </form>
+
+            <!-- Login - Đăng nhập -->
+            <form id="login-form" class="card" novalidate>
+                <h2>Đăng nhập</h2>
+
+                <label>
+                    Email
+                    <input type="email" id="login-email" name="email" placeholder="Email">
+                </label>
+
+                <label>
+                    Password
+                    <input type="password" id="login-password" name="password" placeholder="Password">
+                </label>
+
+                <button type="submit">Đăng nhập</button>
+
+                <p id="login-message" class="message" aria-live="polite">Vui lòng nhập thông tin</p>
+            </form>
+        </section>
+    </main>
+
+    <!-- Link js -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
