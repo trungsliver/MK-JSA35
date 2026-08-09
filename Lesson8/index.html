@@ -1,469 +1,287 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Product Explorer - API Project</title>
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
-
     <!-- ================= HEADER ================= -->
-
     <header class="header">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-
                 <a href="#" class="navbar-brand fw-bold">
                     <i class="bi bi-shop"></i>
                     Product Explorer
                 </a>
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarMenu">
-
                     <ul class="navbar-nav ms-auto">
-
                         <li class="nav-item">
                             <a href="#" class="nav-link active">
                                 Home
                             </a>
                         </li>
-
                         <li class="nav-item">
                             <a href="#products" class="nav-link">
                                 Products
                             </a>
                         </li>
-
                         <li class="nav-item">
                             <a href="#about" class="nav-link">
                                 About
                             </a>
                         </li>
-
                     </ul>
-
                 </div>
-
             </div>
         </nav>
     </header>
 
-
     <!-- ================= HERO ================= -->
-
     <section class="hero-section">
-
         <div class="container">
-
             <div class="row align-items-center">
-
                 <div class="col-lg-7">
-
                     <span class="badge bg-light text-dark mb-3">
                         <i class="bi bi-code-slash"></i>
                         JavaScript API Project
                     </span>
-
                     <h1>
                         Product Explorer
                     </h1>
-
                     <p>
                         Explore products using data from
                         DummyJSON API.
                     </p>
-
                     <a href="#products" class="btn btn-light">
                         Explore Products
                         <i class="bi bi-arrow-right"></i>
                     </a>
-
                 </div>
-
                 <div class="col-lg-5 text-center">
-
                     <i class="bi bi-cloud-arrow-down hero-icon"></i>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-
     <!-- ================= STATISTICS ================= -->
-
     <section class="statistics">
-
         <div class="container">
-
             <div class="row g-4">
-
                 <div class="col-md-4">
-
                     <div class="stat-card">
-
                         <div class="stat-icon">
                             <i class="bi bi-box-seam"></i>
                         </div>
-
                         <div>
                             <h3 id="totalProducts">
                                 0
                             </h3>
-
                             <p>
                                 Total Products
                             </p>
                         </div>
-
                     </div>
-
                 </div>
-
-
                 <div class="col-md-4">
-
                     <div class="stat-card">
-
                         <div class="stat-icon">
                             <i class="bi bi-tags"></i>
                         </div>
-
                         <div>
                             <h3 id="totalCategories">
                                 0
                             </h3>
-
                             <p>
                                 Categories
                             </p>
                         </div>
-
                     </div>
-
                 </div>
-
-
                 <div class="col-md-4">
-
                     <div class="stat-card">
-
                         <div class="stat-icon">
                             <i class="bi bi-star"></i>
                         </div>
-
                         <div>
                             <h3 id="averageRating">
                                 0
                             </h3>
-
                             <p>
                                 Average Rating
                             </p>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
-
+    
     <!-- ================= PRODUCTS ================= -->
-
     <section class="products-section" id="products">
-
         <div class="container">
-
             <div class="section-title">
-
                 <span>
                     OUR PRODUCTS
                 </span>
-
                 <h2>
                     Explore Products
                 </h2>
-
                 <p>
                     Products loaded from DummyJSON API
                 </p>
-
             </div>
-
-
             <!-- FILTER -->
-
             <div class="filter-box">
-
                 <div class="row g-3">
-
                     <!-- Search -->
-
                     <div class="col-lg-5">
-
                         <label class="form-label">
                             Search product
                         </label>
-
                         <div class="input-group">
-
                             <span class="input-group-text">
                                 <i class="bi bi-search"></i>
                             </span>
-
                             <input type="text" id="searchInput" class="form-control"
                                 placeholder="Enter product name...">
-
                         </div>
-
                     </div>
-
-
                     <!-- Category -->
-
                     <div class="col-lg-3">
-
                         <label class="form-label">
                             Category
                         </label>
-
                         <select id="categorySelect" class="form-select">
-
                             <option value="all">
                                 All Categories
                             </option>
-
                         </select>
-
                     </div>
-
-
                     <!-- Sort -->
-
                     <div class="col-lg-3">
-
                         <label class="form-label">
                             Sort by
                         </label>
-
                         <select id="sortSelect" class="form-select">
-
                             <option value="default">
                                 Default
                             </option>
-
                             <option value="price-asc">
-                                Price: Low → High
+                                Price: Low â†’ High
                             </option>
-
                             <option value="price-desc">
-                                Price: High → Low
+                                Price: High â†’ Low
                             </option>
-
                             <option value="rating-desc">
-                                Rating: High → Low
+                                Rating: High â†’ Low
                             </option>
-
                         </select>
-
                     </div>
-
-
                     <!-- Reset -->
-
                     <div class="col-lg-1 d-flex align-items-end">
-
                         <button id="resetBtn" class="btn btn-outline-secondary w-100" title="Reset">
-
                             <i class="bi bi-arrow-clockwise"></i>
-
                         </button>
-
                     </div>
-
                 </div>
-
             </div>
-
-
             <!-- LOADING -->
-
             <div id="loading" class="loading-box">
-
                 <div class="spinner-border" role="status"></div>
-
                 <p>
                     Loading products...
                 </p>
-
             </div>
-
-
             <!-- ERROR -->
-
             <div id="errorMessage" class="alert alert-danger d-none">
-
                 <i class="bi bi-exclamation-triangle"></i>
-
                 Cannot load products.
-
             </div>
-
-
             <!-- PRODUCT COUNT -->
-
             <div class="result-info">
-
                 <span>
                     Showing
                     <strong id="resultCount">0</strong>
                     products
                 </span>
-
             </div>
-
-
             <!-- PRODUCTS -->
-
             <div id="productList" class="row g-4"></div>
-
-
             <!-- PAGINATION -->
-
             <div class="pagination-wrapper">
-
                 <button id="prevBtn" class="btn btn-outline-primary">
-
                     <i class="bi bi-chevron-left"></i>
                     Previous
-
                 </button>
-
                 <span id="pageInfo">
                     Page 1
                 </span>
-
                 <button id="nextBtn" class="btn btn-outline-primary">
-
                     Next
                     <i class="bi bi-chevron-right"></i>
-
                 </button>
-
             </div>
-
         </div>
-
     </section>
 
-
     <!-- ================= ABOUT ================= -->
-
     <section id="about" class="about-section">
-
         <div class="container text-center">
-
             <span class="section-label">
                 LEARNING PROJECT
             </span>
-
             <h2>
                 Practice JavaScript API
             </h2>
-
             <p class="mx-auto">
                 This project helps students practice fetching,
                 processing and displaying JSON data from a REST API.
             </p>
-
         </div>
-
     </section>
 
-
     <!-- ================= PRODUCT MODAL ================= -->
-
     <div class="modal fade" id="productModal" tabindex="-1">
-
         <div class="modal-dialog modal-lg modal-dialog-centered">
-
             <div class="modal-content">
-
                 <div class="modal-header">
-
                     <h5 id="modalTitle" class="modal-title">
                         Product Detail
                     </h5>
-
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-
                 </div>
-
                 <div class="modal-body">
-
                     <div id="modalContent" class="row"></div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
-
     <!-- ================= FOOTER ================= -->
-
     <footer class="footer">
-
         <div class="container text-center">
-
             <p>
                 Product Explorer
             </p>
-
             <small>
                 Practice Project - JavaScript API
             </small>
-
         </div>
-
     </footer>
-
-
     <!-- Bootstrap JS -->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
     <!-- Custom JS -->
-
     <script src="./script.js"></script>
-
 </body>
-
 </html>
