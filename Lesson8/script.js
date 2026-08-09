@@ -113,7 +113,13 @@ function displayProducts() {
     // Kiểm tra nếu không có sản phẩm.
     if (filteredProducts.length === 0) {
         // Hiển thị thông báo không tìm thấy.
-        productList.innerHTML = '<div class="col-12"><div class="alert alert-warning text-center"><i class="bi bi-search"></i> No products found.</div></div>';
+        productList.innerHTML = `
+        <div class="col-12">
+            <div class="alert alert-warning text-center">
+                <i class="bi bi-search"></i> 
+                No products found.
+            </div>
+        </div>`;
         // Cập nhật số lượng kết quả.
         resultCount.textContent = 0;
         // Cập nhật phân trang.
@@ -147,7 +153,25 @@ function createProductCard(product) {
     // Gán class cho cột.
     col.className = "col-12 col-sm-6 col-lg-3";
     // Gán nội dung HTML cho card.
-    col.innerHTML = `<div class="product-card" data-id="${product.id}"><div class="product-image-wrapper"><img src="${product.thumbnail}" alt="${product.title}" class="product-image" loading="lazy"></div><div class="product-body"><span class="product-category">${formatCategory(product.category)}</span><h3 class="product-title">${product.title}</h3><p class="product-description">${product.description}</p><div class="d-flex justify-content-between align-items-center"><span class="product-price">$${product.price}</span><span class="product-rating"><i class="bi bi-star-fill"></i> ${product.rating}</span></div><button class="view-button" onclick="showProductDetail(${product.id})"><i class="bi bi-eye"></i> View Details</button></div></div>`;
+    col.innerHTML = `
+        <div class="product-card" data-id="${product.id}">
+            <div class="product-image-wrapper">
+                <img src="${product.thumbnail}" alt="${product.title}" class="product-image" loading="lazy">
+            </div>
+            <div class="product-body">
+                <span class="product-category">${formatCategory(product.category)}</span>
+                <h3 class="product-title">${product.title}</h3>
+                <p class="product-description">${product.description}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="product-price">$${product.price}</span>
+                    <span class="product-rating"><i class="bi bi-star-fill"></i> ${product.rating}</span>
+                </div>
+                <button class="view-button" onclick="showProductDetail(${product.id})">
+                    <i class="bi bi-eye"></i> View Details
+                </button>
+            </div>
+        </div>
+    `;
     // Trả về phần tử card.
     return col;
 }
@@ -202,7 +226,23 @@ function showProductDetail(productId) {
     // Gán tiêu đề cho modal.
     modalTitle.textContent = product.title;
     // Gán nội dung chi tiết cho modal.
-    modalContent.innerHTML = `<div class="col-md-6"><img src="${product.thumbnail}" alt="${product.title}" class="modal-product-image"></div><div class="col-md-6"><span class="badge text-bg-warning mb-3">${formatCategory(product.category)}</span><h3>${product.title}</h3><p class="text-muted">${product.description}</p><div class="modal-price mb-3">$${product.price}</div><div class="modal-rating mb-3"><i class="bi bi-star-fill"></i> ${product.rating}</div><p><strong>Brand:</strong> ${product.brand || "Unknown"}</p><p><strong>Stock:</strong> ${product.stock}</p><p><strong>Discount:</strong> ${product.discountPercentage}%</p><p><strong>Warranty:</strong> ${product.warrantyInformation}</p><p><strong>Shipping:</strong> ${product.shippingInformation}</p></div>`;
+    modalContent.innerHTML = `
+        <div class="col-md-6">
+            <img src="${product.thumbnail}" alt="${product.title}" class="modal-product-image">
+        </div>
+        <div class="col-md-6">
+            <span class="badge text-bg-warning mb-3">${formatCategory(product.category)}</span>
+            <h3>${product.title}</h3>
+            <p class="text-muted">${product.description}</p>
+            <div class="modal-price mb-3">$${product.price}</div>
+            <div class="modal-rating mb-3"><i class="bi bi-star-fill"></i> ${product.rating}</div>
+            <p><strong>Brand:</strong> ${product.brand || "Unknown"}</p>
+            <p><strong>Stock:</strong> ${product.stock}</p>
+            <p><strong>Discount:</strong> ${product.discountPercentage}%</p>
+            <p><strong>Warranty:</strong> ${product.warrantyInformation}</p>
+            <p><strong>Shipping:</strong> ${product.shippingInformation}</p>
+        </div>
+    `;
     // Lấy phần tử modal.
     const modalElement = document.getElementById("productModal");
     // Khởi tạo modal Bootstrap.
