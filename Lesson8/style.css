@@ -1,0 +1,474 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f7;
+    color: #333;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: #ff5722;
+}
+
+.navbar {
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 22px;
+}
+
+.navbar-brand i {
+    margin-right: 8px;
+}
+
+.nav-link {
+    color: white !important;
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-section {
+    background: linear-gradient(
+        135deg,
+        #ff5722,
+        #ff8a50
+    );
+
+    color: white;
+    padding: 80px 0;
+}
+
+.hero-section h1 {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-icon {
+    font-size: 180px;
+    opacity: 0.25;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.statistics {
+    padding: 40px 0;
+    background: white;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 25px;
+
+    background: #fff;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff0eb;
+    color: #ff5722;
+
+    font-size: 25px;
+}
+
+.stat-card h3 {
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.stat-card p {
+    margin: 0;
+    color: #777;
+}
+
+
+/* =========================
+   PRODUCTS SECTION
+========================= */
+
+.products-section {
+    padding: 70px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title span,
+.section-label {
+    color: #ff5722;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+.section-title p {
+    color: #777;
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+.filter-box {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #ff5722;
+
+    box-shadow:
+        0 0 0 0.2rem rgba(255, 87, 34, 0.15);
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading-box {
+    text-align: center;
+    padding: 50px;
+}
+
+.loading-box .spinner-border {
+    color: #ff5722;
+}
+
+.loading-box p {
+    margin-top: 15px;
+    color: #777;
+}
+
+
+/* =========================
+   RESULT INFO
+========================= */
+
+.result-info {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card {
+    height: 100%;
+
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    border: 1px solid #eee;
+
+    transition: all 0.3s ease;
+
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.product-image-wrapper {
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8f8f8;
+
+    padding: 20px;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-body {
+    padding: 20px;
+}
+
+.product-category {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background: #fff0eb;
+
+    color: #ff5722;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: 600;
+
+    min-height: 45px;
+
+    margin-bottom: 10px;
+}
+
+.product-description {
+    color: #777;
+
+    font-size: 14px;
+
+    height: 42px;
+
+    overflow: hidden;
+
+    margin-bottom: 15px;
+}
+
+.product-price {
+    color: #ff5722;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+.product-rating {
+    color: #f59e0b;
+
+    font-size: 14px;
+}
+
+.view-button {
+    width: 100%;
+
+    margin-top: 15px;
+
+    border: none;
+
+    background: #ff5722;
+
+    color: white;
+
+    padding: 10px;
+
+    border-radius: 6px;
+
+    transition: 0.3s;
+}
+
+.view-button:hover {
+    background: #e64a19;
+}
+
+
+/* =========================
+   PAGINATION
+========================= */
+
+.pagination-wrapper {
+    margin-top: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+#pageInfo {
+    font-weight: 600;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    padding: 70px 0;
+
+    background: white;
+}
+
+.about-section h2 {
+    margin: 15px 0;
+
+    font-size: 36px;
+}
+
+.about-section p {
+    max-width: 650px;
+
+    color: #666;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-product-image {
+    width: 100%;
+    height: 350px;
+
+    object-fit: contain;
+}
+
+.modal-price {
+    font-size: 30px;
+
+    color: #ff5722;
+
+    font-weight: 700;
+}
+
+.modal-rating {
+    color: #f59e0b;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 30px 0;
+
+    background: #222;
+
+    color: white;
+}
+
+.footer p {
+    margin: 0 0 5px;
+
+    font-weight: 600;
+}
+
+.footer small {
+    color: #aaa;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 38px;
+    }
+
+    .hero-icon {
+        display: none;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .product-image-wrapper {
+        height: 200px;
+    }
+
+}
