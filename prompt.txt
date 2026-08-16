@@ -1,0 +1,34 @@
+Xây dựng header cho website kinh doanh đồ nội thất chuyên nghiệp
+
+Yêu cầu:
+- Chỉ dùng HTML, CSS, Bootstrap, JS
+- Có responsive (PC - Tablet - mobile) 
+- Gửi tách riêng file HTML, CSS, JS
+- Sử dụng tone màu phù hợp với sang trọng, luxury
+- Viết đầy đủ hiệu ứng cho các thành phần trên giao diện
+- Có css cho cả lightmode, darkmode (khi darkmode có thêm class 'darkmode' ở thẻ body), tránh lỗi màu chữ không đạt tương phản với màu nền
+- Các file js viết ngắn gọn, không dòng nào bỏ trống / không có nội dung
+
+Nội dung: 
+- Có logo (ảnh hình tròn) và tên website phía bên trái: DK Furniture 
+- Menu điều hướng gồm các thẻ a có thể chuyển sang các trang html khác: index, products, services, carts, orders, account
+- Nút toggle chỉnh darkmode/lightmode (mặc định là lightmode, khi chuyển sang darkmode thì lưu vào biến theme trong localStorage và thêm class "darkmode' cho thẻ body, khi load lại trang thì kiểm tra biến theme)
+- Gửi kèm cdn bootstrap icon
+- Chỉ để thẻ header ở file html, toàn bộ nội dung header sẽ tạo ở file js
+
+===============================================================================================
+
+Xây dựng footer cho website kinh doanh đồ nội thất chuyên nghiệp
+
+Yêu cầu:
+- Chỉ dùng HTML, CSS, Bootstrap, JS
+- Có responsive (PC - Tablet - mobile) 
+- Gửi tách riêng file HTML, CSS, JS
+- Sử dụng tone màu phù hợp với sang trọng, luxury
+- Viết đầy đủ hiệu ứng cho các thành phần trên giao diện
+- Có css cho cả lightmode, darkmode (khi darkmode có thêm class 'darkmode' ở thẻ body), tránh lỗi màu chữ không đạt tương phản với màu nền
+- Các file js viết ngắn gọn, không dòng nào bỏ trống / không có nội dung
+
+Nội dung: 
+- Chỉ để thẻ footer ở file html, toàn bộ nội dung footer sẽ tạo ở file js
+- Tự tạo nội dung footer cho phù hợp
