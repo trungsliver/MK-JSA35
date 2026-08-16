@@ -5,6 +5,7 @@ Các file có trong folder:
 - index.html 
 - styles.css
 - script.js
+- weather-data.json (lấy trên github, thay cho API trong đề bài)
 - tracnghiem.txt (ghi các đáp án trắc nghiệm vào file này)
 
 Link đề bài: shorturl.at/SvtjE
