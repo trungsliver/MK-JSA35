@@ -28,6 +28,7 @@ Yêu cầu:
 - Viết đầy đủ hiệu ứng cho các thành phần trên giao diện
 - Có css cho cả lightmode, darkmode (khi darkmode có thêm class 'darkmode' ở thẻ body), tránh lỗi màu chữ không đạt tương phản với màu nền
 - Các file js viết ngắn gọn, không dòng nào bỏ trống / không có nội dung
+- Chỉ gửi thẻ footer ở file html, các file khác gửi toàn bộ
 
 Nội dung: 
 - Chỉ để thẻ footer ở file html, toàn bộ nội dung footer sẽ tạo ở file js
