@@ -79,3 +79,171 @@ Nội dung:
 	+ Lấy thông tin current_user trong localStorage: userrname, email, sđt, dob, last_login và hiển thị lên màn hình
 	+ Có nút đăng xuất. Khi ấn đăng xuất thì về lại trang login
 
+==================================================================================
+Xây dựng file products.json gồm 30 sản phẩm thực tế về website kinh doanh đồ nội thất chuyên nghiệp theo mẫu sau (lấy thông tin thực tế, không trùng lặp)
+[
+    {
+        "id": "",
+        "name": "",
+        "slug": "",
+        "brand": "",
+        "category": "",
+        "subCategory": "",
+        "price": ,
+        "discount": ,
+        "finalPrice": ,
+        "currency": "",
+        "stock": ,
+        "sold": ,
+        "images": "",
+		"rating": "",
+        "description": ""
+    }
+]
+
+===========================================================================================
+
+Xây dựng main content cho trang products cho website kinh doanh đồ nội thất chuyên nghiệp
+
+Yêu cầu:
+- Chỉ dùng HTML, CSS, Bootstrap, JS
+- Có responsive (PC - Tablet - mobile) 
+- Gửi tách riêng file HTML, CSS, JS
+- Sử dụng tone màu phù hợp với sang trọng, luxury
+- Viết đầy đủ hiệu ứng cho các thành phần trên giao diện, phối màu các thành phần theo tone màu sang trọng (phù hợp với chủ đề website)
+- Có css cho cả lightmode, darkmode (khi darkmode có thêm class 'darkmode' ở thẻ body), tránh lỗi màu chữ không đạt tương phản với màu nền
+- Các file js viết ngắn gọn, không dòng nào bỏ trống / không có nội dung
+- Chỉ gửi thẻ main ở file html (có nội dung chứ không tạo toàn bộ từ file js), các file khác gửi toàn bộ
+
+Nội dung & chức năng: 
+- Có thanh tìm kiếm theo tên (mặc định hiển thị tất cả sản phẩm nếu không nhập nội dung)
+- Có combo box để lọc sản phẩm theo brand, category, rating
+- Lọc sản phẩm theo giá bán, sắp xếp theo giá tăng dần, giảm dần, theo khoảng giá,...
+- Dùng js để lấy các sản phẩm trong file ./data/products.json, mỗi sản phẩm cso cấu trúc
+	{
+        "id": "",
+        "name": "",
+        "slug": "",
+        "brand": "",
+        "category": "",
+        "subCategory": "",
+        "price": ,
+        "discount": ,
+        "finalPrice": ,
+        "currency": "",
+        "stock": ,
+        "sold": ,
+        "images": "",
+		"rating": "",
+        "description": ""
+    }
+- Kích thước các card sản phẩm bằng nhau, kích thước ảnh bằng nhau, có hiệu ứng cho các card( hiệu ứng hover,..)
+- Mỗi card chứa đầy đủ thông tin, nếu thông tin quá dài thì chỉ hiển thị 1 phần, có nút xem chi tiết (hiển thị popup chi tiết sản phẩm), nút Thêm vào giỏ hàng 
+- Khi ấn nút thêm vào giỏ hàng, thêm sản phẩm vào cart ở localStorage
+- Có sử dụng phân trang, 1 trang hiển thị 4 hàng sản phẩm
+
+================================================================================================
+
+Xây dựng main content cho trang index cho website kinh doanh đồ nội thất chuyên nghiệp
+
+Yêu cầu:
+- Chỉ dùng HTML, CSS, Bootstrap, JS
+- Có responsive (PC - Tablet - mobile) 
+- Gửi tách riêng file HTML, CSS, JS
+- Sử dụng tone màu phù hợp với sang trọng, luxury
+- Viết đầy đủ hiệu ứng cho các thành phần trên giao diện, phối màu các thành phần theo tone màu sang trọng (phù hợp với chủ đề website)
+- Có css cho cả lightmode, darkmode (khi darkmode có thêm class 'darkmode' ở thẻ body), tránh lỗi màu chữ không đạt tương phản với màu nền
+- Các file js viết ngắn gọn, không dòng nào bỏ trống / không có nội dung
+- Chỉ gửi thẻ main ở file html (có nội dung chứ không tạo toàn bộ từ file js), các file khác gửi toàn bộ
+
+Nội dung & chức năng: 
+- có carousel gồm 3 ảnh có kích thước bằng nhau, tự động chuyển (có cả nút để tự chuyển)
+- Dùng js để lấy các sản phẩm trong file ./data/products.json, mỗi sản phẩm có cấu trúc
+	{
+        "id": "",
+        "name": "",
+        "slug": "",
+        "brand": "",
+        "category": "",
+        "subCategory": "",
+        "price": ,
+        "discount": ,
+        "finalPrice": ,
+        "currency": "",
+        "stock": ,
+        "sold": ,
+        "images": "",
+		"rating": "",
+        "description": ""
+    }
+- Kích thước các card sản phẩm bằng nhau, kích thước ảnh bằng nhau, có hiệu ứng cho các card( hiệu ứng hover,..)
+- Mỗi card chứa đầy đủ thông tin, nếu thông tin quá dài thì chỉ hiển thị 1 phần, có nút xem chi tiết (hiển thị popup chi tiết sản phẩm), nút Thêm vào giỏ hàng 
+- Khi ấn nút thêm vào giỏ hàng, thêm sản phẩm vào cart ở localStorage
+
+===========================================================================
+
+Xây dựng main content cho trang cart cho website kinh doanh đồ nội thất chuyên nghiệp
+
+Yêu cầu:
+- Chỉ dùng HTML, CSS, Bootstrap, JS
+- Có responsive (PC - Tablet - mobile) 
+- Gửi tách riêng file HTML, CSS, JS
+- Sử dụng tone màu phù hợp với sang trọng, luxury
+- Viết đầy đủ hiệu ứng cho các thành phần trên giao diện, phối màu các thành phần theo tone màu sang trọng (phù hợp với chủ đề website)
+- Có css cho cả lightmode, darkmode (khi darkmode có thêm class 'darkmode' ở thẻ body), tránh lỗi màu chữ không đạt tương phản với màu nền
+- Các file js viết ngắn gọn, không dòng nào bỏ trống / không có nội dung
+- Chỉ gửi thẻ main ở file html (có nội dung chứ không tạo toàn bộ từ file js), các file khác gửi toàn bộ
+
+Nội dung & chức năng: 
+- Giỏ hàng 
+	+ Lấy thông tin các sản phẩm trong giỏ hàng từ localStorage cart (hiện ảnh, tên sản phẩm, số lượng) 
+	+ Có thể sửa số lượng sản phẩm, xóa sản phẩm (khi xóa cần có cảnh báo) 
+	+ Tính tổng tiền sản phẩm 
+- Thanh toán: 
+	+ Lấy thông tin user từ localstorage currentUser (username, email, phone) 
+	+ Cho phép chọn hình thức thanh toán: COD (cần nhập địa chỉ, ghi chú), thanh toán qua thẻ ngân hàng (nhập các thông tin cần thiết) và verify các trường thông tin cần thiết 
+	+ Thông báo khi ấn nút thanh toán (thành công, thất bại kèm lỗi)
+- Khi thanh toán thành công, lưu đơn hàng vào localStorage orders kèm theo email người dùng, mỗi đơn hàng gồm 
+	+ Thông tin người dùng: email, username, sđt, địa chỉ,...
+	+ Danh sách sản phẩm kèm số lượng (sản phẩm đầy đủ thông tin)
+	+ Tổng tiền đơn hàng
+	+ Ngày tạo đơn hàng
+	+ Trạng thái đơn hàng (Pending, Confirmed, Shipping, Returning, Delivered, Canceled), mặc định là pending
+
+=============================================================================
+
+
+Xây dựng main content cho trang order cho website kinh doanh đồ nội thất chuyên nghiệp
+
+Yêu cầu:
+- Chỉ dùng HTML, CSS, Bootstrap, JS
+- Có responsive (PC - Tablet - mobile) 
+- Gửi tách riêng file HTML, CSS, JS
+- Sử dụng tone màu phù hợp với sang trọng, luxury
+- Viết đầy đủ hiệu ứng cho các thành phần trên giao diện, phối màu các thành phần theo tone màu sang trọng (phù hợp với chủ đề website)
+- Có css cho cả lightmode, darkmode (khi darkmode có thêm class 'darkmode' ở thẻ body), tránh lỗi màu chữ không đạt tương phản với màu nền
+- Các file js viết ngắn gọn, không dòng nào bỏ trống / không có nội dung
+- Chỉ gửi thẻ main ở file html (có nội dung chứ không tạo toàn bộ từ file js), các file khác gửi toàn bộ
+
+Nội dung & chức năng: 
+- Lấy toàn bộ đơn hàng từ localStorage theo user đang đăng nhập (có thể dùng curentUser trong localStorage)
+- Hiển thị toàn bộ các thông tin đơn hàng cảu người dùng hiện tại
+- Có thể hủy đơn hàng nếu trạng thái đơn hàng đang là "Pending"
+
+
+============================================================================
+
+Xây dựng main content cho trang services cho website kinh doanh đồ nội thất chuyên nghiệp
+
+Yêu cầu:
+- Chỉ dùng HTML, CSS, Bootstrap, JS
+- Có responsive (PC - Tablet - mobile) 
+- Gửi tách riêng file HTML, CSS, JS
+- Sử dụng tone màu phù hợp với sang trọng, luxury
+- Viết đầy đủ hiệu ứng cho các thành phần trên giao diện, phối màu các thành phần theo tone màu sang trọng (phù hợp với chủ đề website)
+- Có css cho cả lightmode, darkmode (khi darkmode có thêm class 'darkmode' ở thẻ body), tránh lỗi màu chữ không đạt tương phản với màu nền
+- Các file js viết ngắn gọn, không dòng nào bỏ trống / không có nội dung
+- Chỉ gửi thẻ main ở file html (có nội dung chứ không tạo toàn bộ từ file js), các file khác gửi toàn bộ
+
+Nội dung & chức năng: 
+- Tự tạo nội dung phù hợp
