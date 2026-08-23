@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,11 +22,376 @@
     <header id="main-header"></header>
 
     <!-- =========================== MAIN CONTENT ========================== -->
-     <main></main>
+    <main class="products-page">
+
+        <!-- ==================== HERO ==================== -->
+        <section class="products-hero">
+            <div class="container">
+                <div class="products-hero-content">
+                    <span class="hero-subtitle">LUXURY INTERIOR COLLECTION</span>
+                    <h1>Khám phá nội thất<br><span>đẳng cấp vượt thời gian</span></h1>
+                    <p>
+                        Tuyển chọn những sản phẩm nội thất tinh tế,
+                        kết hợp giữa thiết kế hiện đại và chất lượng cao cấp.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PRODUCTS SECTION ==================== -->
+        <section class="products-section">
+            <div class="container">
+
+                <!-- Section Header -->
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">OUR COLLECTION</span>
+                        <h2>Sản phẩm nội thất</h2>
+                    </div>
+
+                    <div class="product-count-wrapper">
+                        <span id="productCount">0 sản phẩm</span>
+                    </div>
+                </div>
+
+                <!-- ==================== FILTER ==================== -->
+                <div class="filter-panel">
+
+                    <div class="filter-panel-header">
+                        <div>
+                            <span class="filter-label">TÌM KIẾM & LỌC</span>
+                            <h3>Khám phá sản phẩm</h3>
+                        </div>
+
+                        <button type="button" class="btn-reset-filter" id="resetFilterBtn">
+                            <i class="bi bi-arrow-counterclockwise"></i>
+                            Đặt lại
+                        </button>
+                    </div>
+
+                    <div class="row g-3">
+
+                        <!-- Search -->
+                        <div class="col-12 col-lg-4">
+                            <label for="searchInput" class="filter-title">
+                                Tìm kiếm sản phẩm
+                            </label>
+
+                            <div class="search-box">
+                                <i class="bi bi-search"></i>
+                                <input type="text" id="searchInput" class="form-control"
+                                    placeholder="Nhập tên sản phẩm...">
+                                <button type="button" id="clearSearchBtn" class="clear-search">
+                                    <i class="bi bi-x"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Brand -->
+                        <div class="col-6 col-lg-2">
+                            <label for="brandFilter" class="filter-title">
+                                Thương hiệu
+                            </label>
+
+                            <select id="brandFilter" class="form-select">
+                                <option value="">Tất cả thương hiệu</option>
+                            </select>
+                        </div>
+
+                        <!-- Category -->
+                        <div class="col-6 col-lg-2">
+                            <label for="categoryFilter" class="filter-title">
+                                Danh mục
+                            </label>
+
+                            <select id="categoryFilter" class="form-select">
+                                <option value="">Tất cả danh mục</option>
+                            </select>
+                        </div>
+
+                        <!-- Rating -->
+                        <div class="col-6 col-lg-2">
+                            <label for="ratingFilter" class="filter-title">
+                                Đánh giá
+                            </label>
+
+                            <select id="ratingFilter" class="form-select">
+                                <option value="">Tất cả đánh giá</option>
+                                <option value="5">★★★★★ 5.0</option>
+                                <option value="4">★★★★☆ 4.0+</option>
+                                <option value="3">★★★☆☆ 3.0+</option>
+                            </select>
+                        </div>
+
+                        <!-- Sort -->
+                        <div class="col-6 col-lg-2">
+                            <label for="sortFilter" class="filter-title">
+                                Sắp xếp
+                            </label>
+
+                            <select id="sortFilter" class="form-select">
+                                <option value="">Mặc định</option>
+                                <option value="price-asc">
+                                    Giá thấp → cao
+                                </option>
+                                <option value="price-desc">
+                                    Giá cao → thấp
+                                </option>
+                                <option value="rating-desc">
+                                    Đánh giá cao nhất
+                                </option>
+                                <option value="sold-desc">
+                                    Bán chạy nhất
+                                </option>
+                                <option value="name-asc">
+                                    Tên A → Z
+                                </option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="price-filter-area">
+
+                        <div class="price-filter-title">
+                            <span class="filter-title">Khoảng giá</span>
+
+                            <strong id="priceRangeLabel">
+                                Tất cả mức giá
+                            </strong>
+                        </div>
+
+                        <div class="price-range-wrapper">
+
+                            <div class="range-values">
+                                <span id="minPriceLabel">0 ₫</span>
+                                <span id="maxPriceLabel">30.000.000 ₫</span>
+                            </div>
+
+                            <div class="dual-range">
+
+                                <input type="range" id="minPriceRange" min="0" max="30000000" step="500000" value="0">
+
+                                <input type="range" id="maxPriceRange" min="0" max="30000000" step="500000"
+                                    value="30000000">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Active Filters -->
+                <div id="activeFilters" class="active-filters d-none">
+                </div>
+
+                <!-- ==================== PRODUCTS ==================== -->
+                <div id="productsGrid" class="row g-4 products-grid">
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state d-none">
+
+                    <div class="empty-icon">
+                        <i class="bi bi-search"></i>
+                    </div>
+
+                    <h3>Không tìm thấy sản phẩm</h3>
+
+                    <p>
+                        Không có sản phẩm phù hợp với điều kiện tìm kiếm
+                        hoặc bộ lọc hiện tại.
+                    </p>
+
+                    <button type="button" class="btn-luxury" id="emptyResetBtn">
+                        Xóa bộ lọc
+                    </button>
+
+                </div>
+
+                <!-- ==================== PAGINATION ==================== -->
+                <div class="pagination-wrapper">
+
+                    <div class="pagination-info">
+                        Hiển thị
+                        <strong id="paginationFrom">0</strong>
+                        -
+                        <strong id="paginationTo">0</strong>
+                        trong tổng số
+                        <strong id="paginationTotal">0</strong>
+                        sản phẩm
+                    </div>
+
+                    <nav aria-label="Product pagination">
+
+                        <ul id="pagination" class="pagination luxury-pagination">
+                        </ul>
+
+                    </nav>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== PRODUCT MODAL ==================== -->
+        <div class="modal fade" id="productDetailModal" tabindex="-1" aria-hidden="true">
+
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+
+                <div class="modal-content product-modal">
+
+                    <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+
+                    <div class="modal-body p-0">
+
+                        <div class="row g-0">
+
+                            <!-- Image -->
+                            <div class="col-lg-6">
+
+                                <div class="modal-product-image">
+
+                                    <img id="modalProductImage" src="" alt="Product">
+
+                                    <div id="modalDiscount" class="modal-discount">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Content -->
+                            <div class="col-lg-6">
+
+                                <div class="modal-product-content">
+
+                                    <span id="modalBrand" class="modal-brand">
+                                    </span>
+
+                                    <h2 id="modalProductName">
+                                        Product Name
+                                    </h2>
+
+                                    <div class="modal-rating">
+
+                                        <span id="modalStars"></span>
+
+                                        <strong id="modalRating">
+                                            0.0
+                                        </strong>
+
+                                        <span class="rating-divider">
+                                            |
+                                        </span>
+
+                                        <span>
+                                            Đã bán
+                                            <strong id="modalSold">
+                                                0
+                                            </strong>
+                                        </span>
+
+                                    </div>
+
+                                    <div class="modal-price">
+
+                                        <span id="modalFinalPrice" class="modal-final-price">
+                                        </span>
+
+                                        <span id="modalOriginalPrice" class="modal-original-price">
+                                        </span>
+
+                                        <span id="modalDiscountText" class="modal-discount-text">
+                                        </span>
+
+                                    </div>
+
+                                    <div class="modal-divider"></div>
+
+                                    <div class="product-meta">
+
+                                        <div class="meta-item">
+                                            <span>Danh mục</span>
+                                            <strong id="modalCategory"></strong>
+                                        </div>
+
+                                        <div class="meta-item">
+                                            <span>Phân loại</span>
+                                            <strong id="modalSubCategory"></strong>
+                                        </div>
+
+                                        <div class="meta-item">
+                                            <span>Tình trạng</span>
+                                            <strong id="modalStock"></strong>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="modal-description">
+
+                                        <h4>Mô tả sản phẩm</h4>
+
+                                        <p id="modalDescription"></p>
+
+                                    </div>
+
+                                    <div class="modal-actions">
+
+                                        <button type="button" id="modalAddCartBtn" class="btn-add-cart-large">
+
+                                            <i class="bi bi-bag-plus"></i>
+
+                                            Thêm vào giỏ hàng
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==================== TOAST ==================== -->
+        <div id="cartToast" class="luxury-toast">
+
+            <div class="toast-icon">
+                <i class="bi bi-check-lg"></i>
+            </div>
+
+            <div class="toast-content">
+                <strong>Đã thêm vào giỏ hàng</strong>
+                <span id="toastProductName">
+                    Sản phẩm đã được thêm.
+                </span>
+            </div>
+
+            <button type="button" id="closeToastBtn" class="toast-close">
+                <i class="bi bi-x"></i>
+            </button>
+
+        </div>
+
+    </main>
 
     <!-- ============================ FOOTER ================================ -->
     <footer id="main-footer"></footer>
-    
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -34,4 +400,5 @@
     <script src="./js/products.js"></script>
 
 </body>
+
 </html>

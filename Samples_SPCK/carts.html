@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DK Furniture</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -21,11 +23,337 @@
     <header id="main-header"></header>
 
     <!-- =========================== MAIN CONTENT ========================== -->
-     <main></main>
+    <main class="cart-page">
+
+        <section class="cart-hero">
+            <div class="container">
+                <div class="cart-hero-content">
+                    <span class="section-label">YOUR SHOPPING BAG</span>
+                    <h1>Giỏ hàng</h1>
+                    <p>Kiểm tra sản phẩm và hoàn tất đơn hàng của bạn.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cart-section">
+            <div class="container">
+
+                <div id="cartEmpty" class="empty-cart d-none">
+                    <div class="empty-cart-icon">
+                        <i class="bi bi-bag-x"></i>
+                    </div>
+                    <h2>Giỏ hàng đang trống</h2>
+                    <p>Bạn chưa có sản phẩm nào trong giỏ hàng.</p>
+                    <a href="./products.html" class="luxury-btn">
+                        Khám phá sản phẩm
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div id="cartContent">
+
+                    <div class="cart-topbar">
+                        <div>
+                            <span class="section-label">SHOPPING CART</span>
+                            <h2>Sản phẩm đã chọn</h2>
+                        </div>
+                        <span id="cartItemCount" class="cart-item-count">0 sản phẩm</span>
+                    </div>
+
+                    <div class="row g-4">
+
+                        <div class="col-lg-8">
+
+                            <div id="cartProductList" class="cart-product-list"></div>
+
+                            <div class="cart-actions">
+                                <a href="./products.html" class="continue-shopping">
+                                    <i class="bi bi-arrow-left"></i>
+                                    Tiếp tục mua sắm
+                                </a>
+
+                                <button type="button" id="clearCartBtn" class="clear-cart-btn">
+                                    <i class="bi bi-trash3"></i>
+                                    Xóa toàn bộ
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-4">
+
+                            <div class="summary-card">
+
+                                <div class="summary-header">
+                                    <span class="section-label">ORDER SUMMARY</span>
+                                    <h3>Tổng đơn hàng</h3>
+                                </div>
+
+                                <div class="summary-row">
+                                    <span>Tạm tính</span>
+                                    <strong id="subtotal">0 ₫</strong>
+                                </div>
+
+                                <div class="summary-row">
+                                    <span>Phí vận chuyển</span>
+                                    <strong id="shippingFee">0 ₫</strong>
+                                </div>
+
+                                <div class="summary-divider"></div>
+
+                                <div class="summary-total">
+                                    <span>Tổng cộng</span>
+                                    <strong id="totalPrice">0 ₫</strong>
+                                </div>
+
+                                <button type="button" id="checkoutBtn" class="checkout-btn">
+                                    Tiến hành thanh toán
+                                    <i class="bi bi-arrow-right"></i>
+                                </button>
+
+                                <div class="secure-payment">
+                                    <i class="bi bi-shield-check"></i>
+                                    <span>Thanh toán an toàn và bảo mật</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="checkoutSection" class="checkout-section d-none">
+            <div class="container">
+
+                <div class="checkout-heading">
+                    <span class="section-label">CHECKOUT</span>
+                    <h2>Thông tin thanh toán</h2>
+                    <p>Vui lòng kiểm tra thông tin trước khi đặt hàng.</p>
+                </div>
+
+                <form id="checkoutForm" novalidate>
+
+                    <div class="row g-4">
+
+                        <div class="col-lg-7">
+
+                            <div class="checkout-card">
+
+                                <div class="checkout-card-header">
+                                    <span>01</span>
+                                    <div>
+                                        <h3>Thông tin khách hàng</h3>
+                                        <p>Thông tin được lấy từ tài khoản hiện tại.</p>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+
+                                    <div class="col-md-6">
+                                        <label for="username">Họ và tên</label>
+                                        <input type="text" id="username" class="form-control luxury-input" readonly>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" class="form-control luxury-input" readonly>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="phone">Số điện thoại</label>
+                                        <input type="tel" id="phone" class="form-control luxury-input" readonly>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="checkout-card">
+
+                                <div class="checkout-card-header">
+                                    <span>02</span>
+                                    <div>
+                                        <h3>Phương thức thanh toán</h3>
+                                        <p>Lựa chọn phương thức phù hợp với bạn.</p>
+                                    </div>
+                                </div>
+
+                                <div class="payment-methods">
+
+                                    <label class="payment-option">
+                                        <input type="radio" name="paymentMethod" value="COD" checked>
+                                        <span class="payment-radio"></span>
+                                        <span class="payment-icon">
+                                            <i class="bi bi-truck"></i>
+                                        </span>
+                                        <span class="payment-text">
+                                            <strong>Thanh toán khi nhận hàng</strong>
+                                            <small>Thanh toán bằng tiền mặt khi nhận hàng.</small>
+                                        </span>
+                                    </label>
+
+                                    <label class="payment-option">
+                                        <input type="radio" name="paymentMethod" value="CARD">
+                                        <span class="payment-radio"></span>
+                                        <span class="payment-icon">
+                                            <i class="bi bi-credit-card"></i>
+                                        </span>
+                                        <span class="payment-text">
+                                            <strong>Thẻ ngân hàng</strong>
+                                            <small>Thanh toán trực tuyến bằng thẻ.</small>
+                                        </span>
+                                    </label>
+
+                                </div>
+
+                                <div id="codForm" class="payment-detail">
+
+                                    <div class="mb-3">
+                                        <label for="address">Địa chỉ nhận hàng <span>*</span></label>
+                                        <textarea id="address" class="form-control luxury-input" rows="3"
+                                            placeholder="Nhập địa chỉ nhận hàng"></textarea>
+                                        <div class="invalid-message" id="addressError"></div>
+                                    </div>
+
+                                    <div>
+                                        <label for="note">Ghi chú</label>
+                                        <textarea id="note" class="form-control luxury-input" rows="3"
+                                            placeholder="Ghi chú cho người giao hàng"></textarea>
+                                    </div>
+
+                                </div>
+
+                                <div id="cardForm" class="payment-detail d-none">
+
+                                    <div class="card-security-notice">
+                                        <i class="bi bi-lock-fill"></i>
+                                        <span>Thông tin thẻ chỉ được dùng để mô phỏng quá trình thanh toán.</span>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="cardNumber">Số thẻ <span>*</span></label>
+                                        <input type="text" id="cardNumber" class="form-control luxury-input"
+                                            maxlength="19" placeholder="1234 5678 9012 3456">
+                                        <div class="invalid-message" id="cardNumberError"></div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="cardName">Tên chủ thẻ <span>*</span></label>
+                                        <input type="text" id="cardName" class="form-control luxury-input"
+                                            placeholder="NGUYEN VAN A">
+                                        <div class="invalid-message" id="cardNameError"></div>
+                                    </div>
+
+                                    <div class="row g-3">
+
+                                        <div class="col-6">
+                                            <label for="expiryDate">Ngày hết hạn <span>*</span></label>
+                                            <input type="text" id="expiryDate" class="form-control luxury-input"
+                                                maxlength="5" placeholder="MM/YY">
+                                            <div class="invalid-message" id="expiryDateError"></div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <label for="cvv">CVV <span>*</span></label>
+                                            <input type="password" id="cvv" class="form-control luxury-input"
+                                                maxlength="4" placeholder="123">
+                                            <div class="invalid-message" id="cvvError"></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-5">
+
+                            <div class="checkout-order-card">
+
+                                <div class="checkout-card-header">
+                                    <span>03</span>
+                                    <div>
+                                        <h3>Đơn hàng của bạn</h3>
+                                        <p>Kiểm tra lại sản phẩm trước khi đặt hàng.</p>
+                                    </div>
+                                </div>
+
+                                <div id="checkoutProducts" class="checkout-products"></div>
+
+                                <div class="summary-divider"></div>
+
+                                <div class="summary-row">
+                                    <span>Tạm tính</span>
+                                    <strong id="checkoutSubtotal">0 ₫</strong>
+                                </div>
+
+                                <div class="summary-row">
+                                    <span>Phí vận chuyển</span>
+                                    <strong id="checkoutShipping">0 ₫</strong>
+                                </div>
+
+                                <div class="summary-total">
+                                    <span>Tổng thanh toán</span>
+                                    <strong id="checkoutTotal">0 ₫</strong>
+                                </div>
+
+                                <button type="submit" class="place-order-btn">
+                                    <i class="bi bi-check2-circle"></i>
+                                    Xác nhận đặt hàng
+                                </button>
+
+                                <button type="button" id="backToCartBtn" class="back-cart-btn">
+                                    <i class="bi bi-arrow-left"></i>
+                                    Quay lại giỏ hàng
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </section>
+
+        <div class="modal fade" id="orderResultModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content result-modal">
+
+                    <div id="resultIcon" class="result-icon success">
+                        <i class="bi bi-check-lg"></i>
+                    </div>
+
+                    <h2 id="resultTitle">Đặt hàng thành công</h2>
+
+                    <p id="resultMessage">
+                        Đơn hàng của bạn đã được ghi nhận.
+                    </p>
+
+                    <div id="orderCode" class="order-code"></div>
+
+                    <button type="button" id="resultCloseBtn" class="luxury-btn" data-bs-dismiss="modal">
+                        Tiếp tục
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
 
     <!-- ============================ FOOTER ================================ -->
     <footer id="main-footer"></footer>
-    
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -34,4 +362,5 @@
     <script src="./js/carts.js"></script>
 
 </body>
+
 </html>

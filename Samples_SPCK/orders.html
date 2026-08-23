@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,11 +22,109 @@
     <header id="main-header"></header>
 
     <!-- =========================== MAIN CONTENT ========================== -->
-     <main></main>
+    <main class="orders-page">
+        <section class="orders-hero">
+            <div class="container">
+                <div class="orders-hero-content">
+                    <span class="section-label">ORDER MANAGEMENT</span>
+                    <h1>Đơn hàng của tôi</h1>
+                    <p>Theo dõi và quản lý các đơn hàng nội thất của bạn.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="orders-section">
+            <div class="container">
+                <div class="orders-header">
+                    <div>
+                        <span class="section-label">MY ORDERS</span>
+                        <h2>Lịch sử đơn hàng</h2>
+                    </div>
+                    <div id="orderCount" class="order-count">0 đơn hàng</div>
+                </div>
+
+                <div class="order-filter">
+                    <button type="button" class="filter-btn active" data-status="ALL">Tất cả</button>
+                    <button type="button" class="filter-btn" data-status="Pending">Chờ xử lý</button>
+                    <button type="button" class="filter-btn" data-status="Confirmed">Đã xác nhận</button>
+                    <button type="button" class="filter-btn" data-status="Shipping">Đang giao</button>
+                    <button type="button" class="filter-btn" data-status="Delivered">Đã giao</button>
+                    <button type="button" class="filter-btn" data-status="Returning">Đang hoàn trả</button>
+                    <button type="button" class="filter-btn" data-status="Canceled">Đã hủy</button>
+                </div>
+
+                <div id="ordersList" class="orders-list"></div>
+
+                <div id="emptyOrders" class="empty-orders d-none">
+                    <div class="empty-orders-icon">
+                        <i class="bi bi-receipt"></i>
+                    </div>
+                    <h3>Chưa có đơn hàng</h3>
+                    <p>Bạn chưa có đơn hàng nào trong tài khoản.</p>
+                    <a href="./products.html" class="luxury-btn">
+                        Khám phá sản phẩm
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div id="noFilterResult" class="empty-orders d-none">
+                    <div class="empty-orders-icon">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <h3>Không tìm thấy đơn hàng</h3>
+                    <p>Không có đơn hàng nào phù hợp với trạng thái đã chọn.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal fade" id="orderDetailModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content order-detail-modal">
+                    <div class="modal-header">
+                        <div>
+                            <span class="section-label">ORDER DETAIL</span>
+                            <h3 id="modalOrderCode">Chi tiết đơn hàng</h3>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="orderDetailContent" class="modal-body"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="cancelOrderModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content cancel-modal">
+                    <div class="cancel-icon">
+                        <i class="bi bi-exclamation-lg"></i>
+                    </div>
+                    <h3>Hủy đơn hàng?</h3>
+                    <p>Bạn có chắc chắn muốn hủy đơn hàng này không? Thao tác này không thể hoàn tác.</p>
+                    <div class="cancel-modal-actions">
+                        <button type="button" class="modal-secondary-btn" data-bs-dismiss="modal">
+                            Không, quay lại
+                        </button>
+                        <button type="button" id="confirmCancelBtn" class="modal-danger-btn">
+                            Xác nhận hủy
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="toast-container position-fixed bottom-0 end-0 p-4">
+            <div id="orderToast" class="toast luxury-toast" role="alert">
+                <div class="toast-body">
+                    <i id="toastIcon" class="bi bi-check-circle"></i>
+                    <span id="toastMessage">Thông báo</span>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <!-- ============================ FOOTER ================================ -->
     <footer id="main-footer"></footer>
-    
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -34,4 +133,5 @@
     <script src="./js/orders.js"></script>
 
 </body>
+
 </html>
